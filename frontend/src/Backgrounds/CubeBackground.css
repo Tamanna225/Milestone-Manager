@@ -1,0 +1,144 @@
+/* Parent container */
+.cubes-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+    filter: blur(2px);
+    z-index: -1;
+}
+
+/* General cube container styling */
+.cube-container {
+    position: absolute;
+    perspective: 1000px; /* Apply perspective to each cube */
+}
+
+/* Top-right Cube */
+.cube-container.top-right {
+    top: 20%;
+    right: 40%;
+}
+
+/* Middle-left Cube */
+.cube-container.middle-left {
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%); /* Center vertically relative to the middle */
+}
+
+/* Bottom-right Cube */
+.cube-container.bottom-right {
+    bottom: 10%;
+    right: 10%;
+}
+
+/* Cube Styling (Existing) */
+.cube {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform-style: preserve-3d;
+}
+
+/* Top-right cube animation */
+.cube-container.top-right .cube {
+    animation: rotateX 15s infinite linear;
+}
+
+/* Middle-left cube animation */
+.cube-container.middle-left .cube {
+    animation: rotateY 20s infinite linear;
+}
+
+/* Bottom-right cube animation */
+.cube-container.bottom-right .cube {
+    animation: rotateXY 25s infinite linear;
+}
+
+/* Face Styling */
+.face {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, #000000a0, #000000);
+    border: 2px solid rgba(138, 135, 135, 0.2);
+    opacity: 0.9;
+}
+
+.face::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(239, 239, 239, 0.3), rgba(0, 0, 0, 0));
+    opacity: 0.5;
+    transform: translateZ(1px);
+    pointer-events: none;
+}
+
+/* Front and back faces */
+.front {
+    transform: translateZ(75px);
+}
+.back {
+    transform: rotateY(180deg) translateZ(75px);
+}
+
+/* Left and right faces */
+.left {
+    transform: rotateY(-90deg) translateZ(75px);
+}
+.right {
+    transform: rotateY(90deg) translateZ(75px);
+}
+
+/* Top and bottom faces */
+.top {
+    transform: rotateX(90deg) translateZ(75px);
+}
+.bottom {
+    transform: rotateX(-90deg) translateZ(75px);
+}
+
+/* Rotation animations */
+@keyframes rotateX {
+    0% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+@keyframes rotateY {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes rotateXY {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+/* Noise Overlay */
+.noise-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/triangles.png') repeat; /* Use your preferred noise image */
+    filter: blur(10px); /* Apply blur effect */
+    pointer-events: none; /* Make sure it doesn't block interaction */
+    z-index: 2; /* Position it above the cubes */
+}

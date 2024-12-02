@@ -1,0 +1,76 @@
+/* Keyframe animations */
+@keyframes animateD {
+    0% {
+      transform: rotateX(-15deg) rotateY(0deg);
+    }
+    100% {
+      transform: rotateX(-15deg) rotateY(-360deg);
+    }
+  }
+  
+  @keyframes animateD2 {
+    0% {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+      transform: rotateX(180deg) rotateY(-360deg);
+    }
+  }
+  
+  @keyframes animateD3 {
+    0% {
+      transform: rotateX(-90deg) rotateY(0deg);
+    }
+    100% {
+      transform: rotateX(90deg) rotateY(45deg);
+    }
+  }
+  
+  /* Tailwind-compatible utility classes */
+  .animate-spin-slow {
+    animation: animateD 8s linear infinite;
+  }
+  
+  .animate-ping-alt {
+    animation: animateD2 5s ease-out infinite alternate;
+  }
+  
+  .animate-pulse {
+    animation: animateD3 1s ease-in-out infinite alternate;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .shadow-cube {
+    box-shadow: 0 0 7px #7dff99, 0 0 10px #7dff99;
+  }
+  
+  .face,
+  .face2,
+  .face3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid #7dff99;
+  }
+  
+  .cube,
+  .cube2,
+  .cube3 {
+    position: relative;
+    transform-style: preserve-3d;
+  }
+  
+  .topD {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    transform: rotateX(90deg) translateZ(150px);
+  }
+  

@@ -6,17 +6,12 @@ import Inventory from './Components/Inventory';
 import Signup from './Components/Signup';
 import Login from './Components/Login';
 import GeoTagPics from './Components/GeoTagPics';
-import CubeAnimation from './Backgrounds/CubeAnimation';
-import ConcreteBackground from './Backgrounds/Concrete';
-import RevolvingCubes from './Backgrounds/Revolvingcubes';
-import BackgroundEffect from './Backgrounds/BackgroundEffect';
-import FloatingShapesBackground from './Backgrounds/FloatingShapesBackground';
-import CubeBackground from './Backgrounds/CubeBackground';
 import AdminInventory from './Components/AdminInventory';
 import AdminBudget from './Components/AdminBudget';
 import Profile from './Components/Profile';
 import AdminGeoTagPics from './Components/AdminGeoTagPics';
 import AdminProjectDetails from './Components/AdminProjectDetails';
+import CubeBackground from './Backgrounds/CubeBackground';
 import './App.css';
 //reviews
 

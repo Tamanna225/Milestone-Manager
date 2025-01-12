@@ -14,3 +14,4 @@ Milestone Manager is a project management tool designed to help teams track and 
 
 - **React**: JavaScript library for building user interfaces.
 - **Tailwind CSS**: Utility-first CSS framework for styling.
+- **PHP**: Currently, The backend is made in PHP
